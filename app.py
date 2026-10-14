@@ -85,12 +85,11 @@ if user_move := st.chat_input("Ваш ход..."):
         with st.chat_message("assistant"):
             with st.spinner("Хёнджин реагирует..."):
                 try:
-                    response = requests.post(url="https://openrouter.ai/api/v1/chat/completions", headers=...
-                        url="https://openrouter.ai",
+                    response = requests.post(
+                        url="https://openrouter.ai/api/v1/chat/completions",
                         headers={
                             "Authorization": f"Bearer {api_key}",
-                            "Content-Type": "application/json",
-                            "HTTP-Referer": "https://streamlit.app"
+                            "Content-Type": "application/json"
                         },
                         json={
                             "model": model_choice,
