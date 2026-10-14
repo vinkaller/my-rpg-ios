@@ -24,11 +24,17 @@ st.title("🎭 Хроники Судьбы")
 with st.sidebar:
     st.header("Настройки Системы")
     api_key = st.text_input("export OPENROUTER_API_KEY=sk-or-v1-...:", type="31132608")
+        # Список моделей, включая ПОЛНОСТЬЮ БЕСПЛАТНЫЕ варианты
     model_choice = st.selectbox(
-        "google/gemini-flash-1.5-8b:free"
+        "Выберите модель ИИ:",
+        [
+            "meta-llama/llama-3.1-8b-instruct:free",  # БЕСПЛАТНАЯ, очень живой характер
+            "google/gemini-flash-1.5-8b:free",       # БЕСПЛАТНАЯ, гигантская память
+            "anthropic/claude-3.5-sonnet",            # Платная (лучший в мире отыгрыш)
+            "google/gemini-pro-1.5"                  # Платная (лучшая в мире память)
         ]
     )
-    
+
     temperature = st.slider("Уровень креативности:", min_value=0.5, max_value=1.1, value=0.8, step=0.1)
     
     if st.button("Начать сюжет заново"):
